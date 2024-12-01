@@ -1,0 +1,5 @@
+<div class="grid grid-cols-5 gap-4 p-4">
+    @for (item of cardData; track $index) {
+        <app-card [title]="item" (click)="navigateToTopic(item)"></app-card>
+    }     
+</div>
