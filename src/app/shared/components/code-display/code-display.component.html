@@ -1,5 +1,17 @@
 <div class="code-container">
-    <pre><code>{{ code }}</code></pre>
-    <button class="copy-btn" (click)="copyCode()">Copy</button>
+  <!-- Tab Headers -->
+  <div class="tab-header">
+    <button 
+      class="tab-button" 
+      [class.active]="activeTab === 'html'" 
+      (click)="switchTab('html')">HTML</button>
+    <button 
+      class="tab-button" 
+      [class.active]="activeTab === 'ts'" 
+      (click)="switchTab('ts')">TypeScript</button>
   </div>
-  
+
+  <!-- Tab Content -->
+  <pre><code>{{ activeTab === 'html' ? htmlCode : tsCode }}</code></pre>
+  <button class="copy-btn absolute top-0 right-3" (click)="copyCode()">{{ copyBtn }}</button>
+</div>

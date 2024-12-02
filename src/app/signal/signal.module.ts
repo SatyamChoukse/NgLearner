@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SignalRoutingModule } from './signal-routing.module';
 import { SignalDetailComponent } from './signal-detail/signal-detail.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { SignalDetailComponent } from './signal-detail/signal-detail.component';
   ],
   imports: [
     CommonModule,
-    SignalRoutingModule
+    SignalRoutingModule,
+    SharedModule
   ]
 })
 export class SignalModule { }

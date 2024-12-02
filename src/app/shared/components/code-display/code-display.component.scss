@@ -1,34 +1,67 @@
+/* Container Styling */
 .code-container {
-    position: relative;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 20px 0;
-    overflow: auto;
-  }
-  
-  pre {
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .copy-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 12px;
-  }
-  
-  .copy-btn:hover {
-    background-color: #0056b3;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 20px 0px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  position: relative;
+  overflow-x: auto;
+  z-index: 1 !important;
+}
+
+/* Tab Header */
+.tab-header {
+  display: flex;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.tab-button.active {
+  border-bottom: 2px solid #007bff;
+  color: #007bff;
+}
+
+.tab-button:hover {
+  color: #0056b3;
+}
+
+/* Code Block */
+pre {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  color: #333;
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+/* Copy Button */
+.copy-btn {
+  margin-top: 10px;
+  padding: 5px 15px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  float: right;
+}
+
+.copy-btn:hover {
+  background-color: #0056b3;
+}

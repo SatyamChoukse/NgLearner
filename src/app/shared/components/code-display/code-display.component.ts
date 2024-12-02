@@ -8,13 +8,25 @@ import { Component, Input } from '@angular/core';
   styleUrl: './code-display.component.scss'
 })
 export class CodeDisplayComponent {
-  @Input() code: string = ''; // Code to display
+  @Input() htmlCode: string = ''; // HTML code snippet
+  @Input() tsCode: string = ''; // TypeScript code snippet
+  activeTab: 'html' | 'ts' = 'html'; // Default active tab
+  copyBtn: string = 'Copy'; // Button text
 
+  // Switch between HTML and TS tabs
+  switchTab(tab: 'html' | 'ts'): void {
+    this.activeTab = tab;
+    this.copyBtn = 'Copy'; // Reset button text when switching tabs
+  }
+
+  // Copy code to clipboard
   copyCode(): void {
-    navigator.clipboard.writeText(this.code).then(() => {
-      alert('Code copied to clipboard!');
+    const codeToCopy = this.activeTab === 'html' ? this.htmlCode : this.tsCode;
+    navigator.clipboard.writeText(codeToCopy).then(() => {
+      this.copyBtn = 'Copied!';
+      setTimeout(() => (this.copyBtn = 'Copy'), 2000);
     }).catch(err => {
-      console.error('Failed to copy code: ', err);
+      console.error('Failed to copy code:', err);
     });
   }
 }

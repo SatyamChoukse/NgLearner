@@ -1,4 +1,5 @@
-<div class="max-w-6xl mt-4 mx-auto p-8 bg-gradient-to-r from-indigo-50 to-blue-50 shadow-xl rounded-lg border border-blue-200">
+<div
+    class="max-w-6xl mt-4 mx-auto p-8 bg-gradient-to-r from-indigo-50 to-blue-50 shadow-xl rounded-lg border border-blue-200">
     <!-- Header -->
     <div class="text-center">
         <h2 class="text-3xl font-extrabold text-indigo-700">
@@ -34,7 +35,8 @@
                 </div>
                 <div>
                     <h4 class="font-semibold text-indigo-700">Signal</h4>
-                    <p class="text-gray-700">A container for a value. When the value changes, it tells Angular to update everything that depends on it.</p>
+                    <p class="text-gray-700">A container for a value. When the value changes, it tells Angular to update
+                        everything that depends on it.</p>
                 </div>
             </li>
             <li class="flex items-start space-x-4">
@@ -43,7 +45,8 @@
                 </div>
                 <div>
                     <h4 class="font-semibold text-blue-700">Computed</h4>
-                    <p class="text-gray-700">Computed signals are read-only signals that derive their value from other signals. They update automatically when dependencies change.</p>
+                    <p class="text-gray-700">Computed signals are read-only signals that derive their value from other
+                        signals. They update automatically when dependencies change.</p>
                 </div>
             </li>
             <li class="flex items-start space-x-4">
@@ -52,10 +55,17 @@
                 </div>
                 <div>
                     <h4 class="font-semibold text-green-700">Effect</h4>
-                    <p class="text-gray-700">Code that runs automatically when a signal changes (e.g., logging to the console or calling an API).</p>
+                    <p class="text-gray-700">Code that runs automatically when a signal changes (e.g., logging to the
+                        console or calling an API).</p>
                 </div>
             </li>
         </ul>
+    </div>
+
+    <!-- code container -->
+    <div class="mt-8">
+        <h2 class="text-2xl font-semibold">Example</h2>
+        <app-code-display [htmlCode]="htmlSnippet" [tsCode]="tsSnippet"></app-code-display>
     </div>
 
     <!-- Why Use Signals -->
@@ -66,7 +76,8 @@
         <ul class="mt-6 space-y-6">
             <li class="flex items-start space-x-4">
                 <div class="w-10 h-10 bg-green-100 text-green-600 flex items-center justify-center rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                     </svg>
                 </div>
@@ -76,18 +87,23 @@
             </li>
             <li class="flex items-start space-x-4">
                 <div class="w-10 h-10 bg-yellow-100 text-yellow-600 flex items-center justify-center rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m-6-8h6" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6m-6-8h6" />
                     </svg>
                 </div>
                 <p class="text-gray-800">
-                    <strong class="text-yellow-700">No Manual Watching -</strong> No need for subscribe or unsubscribe like RxJS.
+                    <strong class="text-yellow-700">No Manual Watching -</strong> No need for subscribe or unsubscribe
+                    like RxJS.
                 </p>
             </li>
             <li class="flex items-start space-x-4">
                 <div class="w-10 h-10 bg-purple-100 text-purple-600 flex items-center justify-center rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l4-4-4-4m8 8l-4-4 4-4" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 16l4-4-4-4m8 8l-4-4 4-4" />
                     </svg>
                 </div>
                 <p class="text-gray-800">
@@ -95,5 +111,59 @@
                 </p>
             </li>
         </ul>
+    </div>
+
+    <!-- Signals and Change Detection    -->
+    <div class="mt-10">
+        <h3 class="text-2xl font-semibold text-indigo-700 border-b-2 border-indigo-500 pb-2 inline-block">
+            Traditional vs. Signals
+        </h3>
+        <table class="mt-6 w-full border-collapse border border-blue-200 shadow-md rounded-lg text-center">
+            <thead class="bg-indigo-100 text-indigo-700">
+                <tr>
+                    <th class="px-6 py-3 text-sm font-semibold border-b border-indigo-200 border border-e-2">
+                        Traditional Angular
+                    </th>
+                    <th class="px-6 py-3 text-sm font-semibold border-b border-indigo-200">
+                        With Signals
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="bg-white text-gray-800">
+                <tr class="hover:bg-blue-50 border-b border-gray-200">
+                    <td class="px-6 py-4 border border-e-2">
+                        Uses Zone.js to detect changes in the entire app.
+                    </td>
+                    <td class="px-6 py-4">
+                        Signals directly notify only the affected parts.
+                    </td>
+                </tr>
+                <tr class="hover:bg-blue-50 border-b border-gray-200">
+                    <td class="px-6 py-4 border border-e-2">
+                        All templates are checked for updates.
+                    </td>
+                    <td class="px-6 py-4">
+                        Only the template using the signal is updated.
+                    </td>
+                </tr>
+                <tr class="hover:bg-blue-50 border-b border-gray-200">
+                    <td class="px-6 py-4 border border-e-2">
+                        Manual subscriptions (e.g., with RxJS) are needed.
+                    </td>
+                    <td class="px-6 py-4">
+                        No subscriptions—signals manage everything.
+                    </td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="px-6 py-4 border border-e-2">
+                        Can be less efficient for big apps.
+                    </td>
+                    <td class="px-6 py-4">
+                        Super efficient, even for large apps.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
     </div>
 </div>
